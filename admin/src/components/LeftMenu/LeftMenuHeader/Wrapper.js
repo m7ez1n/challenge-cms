@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Logo from '../../../assets/images/sallve.png';
 
 const Wrapper = styled.div`
-  background-color: #fff;
   height: ${props => props.theme.main.sizes.leftMenu.height};
 
   .projectName {
