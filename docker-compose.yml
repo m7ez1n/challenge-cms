@@ -3,7 +3,7 @@ services:
   mongo:
     image: mongo
     environment:
-      MONGO_INITDB_DATABASE: strapi
+      MONGO_INITDB_DATABASE: sallve-cms
       MONGO_INITDB_ROOT_USERNAME: strapi
       MONGO_INITDB_ROOT_PASSWORD: strapi
     volumes:
