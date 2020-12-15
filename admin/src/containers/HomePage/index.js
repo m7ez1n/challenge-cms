@@ -18,46 +18,29 @@ import SocialLink from './SocialLink';
 
 const FIRST_BLOCK_LINKS = [
   {
-    link:
-      'https://strapi.io/documentation/v3.x/getting-started/quick-start.html#_4-create-a-category-content-type',
-    contentId: 'app.components.BlockLink.documentation.content',
-    titleId: 'app.components.BlockLink.documentation',
-  },
-  {
-    link: 'https://github.com/strapi/foodadvisor',
-    contentId: 'app.components.BlockLink.code.content',
-    titleId: 'app.components.BlockLink.code',
+    link: 'https://github.com/m7he4rt/challenge-cms',
+    contentId: 'Confira o código desse projeto aqui!',
+    titleId: 'Code Repository',
+    type: 'code'
   },
 ];
 
 const SOCIAL_LINKS = [
   {
     name: 'GitHub',
-    link: 'https://github.com/strapi/strapi/',
+    link: 'https://github.com/m7he4rt',
   },
   {
     name: 'Slack',
-    link: 'https://slack.strapi.io/',
-  },
-  {
-    name: 'Medium',
-    link: 'https://medium.com/@strapi',
+    link: 'https://react-brasil.slack.com/',
   },
   {
     name: 'Twitter',
-    link: 'https://twitter.com/strapijs',
+    link: 'https://twitter.com/m7he4rt',
   },
   {
-    name: 'Reddit',
-    link: 'https://www.reddit.com/r/Strapi/',
-  },
-  {
-    name: 'Forum',
-    link: 'https://forum.strapi.io',
-  },
-  {
-    name: 'Academy',
-    link: 'https://academy.strapi.io',
+    name: 'He4rt',
+    link: 'https://www.discord.io/he4rt/',
   },
 ];
 
@@ -121,68 +104,17 @@ const HomePage = ({ history: { push } }) => {
                   name: upperFirst(username),
                 }}
               >
-                {msg => <h2 id="mainHeader">{msg}</h2>}
+                {msg => <h2 id="mainHeader">Olá!</h2>}
               </FormattedMessage>
-              {hasAlreadyCreatedContentTypes ? (
-                <FormattedMessage id="app.components.HomePage.welcomeBlock.content.again">
-                  {msg => <P>{msg}</P>}
-                </FormattedMessage>
-              ) : (
-                <FormattedMessage id="HomePage.welcome.congrats">
-                  {congrats => {
-                    return (
-                      <FormattedMessage id="HomePage.welcome.congrats.content">
-                        {content => {
-                          return (
-                            <FormattedMessage id="HomePage.welcome.congrats.content.bold">
-                              {boldContent => {
-                                return (
-                                  <P>
-                                    <b>{congrats}</b>&nbsp;
-                                    {content}&nbsp;
-                                    <b>{boldContent}</b>
-                                  </P>
-                                );
-                              }}
-                            </FormattedMessage>
-                          );
-                        }}
-                      </FormattedMessage>
-                    );
-                  }}
-                </FormattedMessage>
-              )}
-              {hasAlreadyCreatedContentTypes && (
-                <div style={{ marginTop: isLoading ? 60 : 50 }}>
-                  {posts.map((post, index) => (
-                    <BlogPost
-                      {...post}
-                      key={post.link}
-                      isFirst={index === 0}
-                      isLoading={isLoading}
-                      error={error}
-                    />
-                  ))}
-                </div>
-              )}
-              <FormattedMessage id={linkProps.id}>
-                {msg => (
-                  <ALink
-                    rel="noopener noreferrer"
-                    {...linkProps}
-                    style={{ verticalAlign: ' bottom', marginBottom: 5 }}
-                  >
-                    {msg}
-                  </ALink>
-                )}
+              <FormattedMessage id="app.components.HomePage.welcomeBlock.content.again">
+                {msg => <P>Bem-vindo! Cadastre novos produtos, edite-os e também exclua-os se quiser.</P>}
               </FormattedMessage>
-              <Separator style={{ marginTop: 37, marginBottom: 36 }} />
+
+              <Separator style={{ marginTop: 34, marginBottom: 20 }} />
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 {FIRST_BLOCK_LINKS.map((data, index) => {
-                  const type = index === 0 ? 'doc' : 'code';
-
                   return (
-                    <LinkWrapper href={data.link} target="_blank" key={data.link} type={type}>
+                    <LinkWrapper href={data.link} target="_blank" key={data.link} type={data.type}>
                       <FormattedMessage id={data.titleId}>
                         {title => <p className="bold">{title}</p>}
                       </FormattedMessage>
@@ -198,20 +130,9 @@ const HomePage = ({ history: { push } }) => {
 
           <div className="col-md-12 col-lg-4">
             <Block style={{ paddingRight: 30, paddingBottom: 0 }}>
-              <FormattedMessage id="HomePage.community">{msg => <h2>{msg}</h2>}</FormattedMessage>
+              <FormattedMessage id="HomePage.community">{msg => <h2>Saiba Mais!</h2>}</FormattedMessage>
               <FormattedMessage id="app.components.HomePage.community.content">
-                {content => <P style={{ marginTop: 7, marginBottom: 0 }}>{content}</P>}
-              </FormattedMessage>
-              <FormattedMessage id="HomePage.roadmap">
-                {msg => (
-                  <ALink
-                    rel="noopener noreferrer"
-                    href="https://portal.productboard.com/strapi/1-public-roadmap/tabs/2-under-consideration"
-                    target="_blank"
-                  >
-                    {msg}
-                  </ALink>
-                )}
+                {content => <P style={{ marginTop: 7, marginBottom: 0 }}>Acesse a comunidade ou fale comigo diretamente em qualquer rede social.</P>}
               </FormattedMessage>
 
               <Separator style={{ marginTop: 18 }} />

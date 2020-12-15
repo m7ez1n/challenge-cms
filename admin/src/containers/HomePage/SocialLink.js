@@ -12,6 +12,7 @@ import Medium from '../../assets/images/social_medium.png';
 import Twitter from '../../assets/images/social_twitter.png';
 import Reddit from '../../assets/images/social_reddit.png';
 import Forum from '../../assets/images/social_forum.png';
+import He4rt from '../../assets/images/social_he4rt.png'
 
 import { SocialLinkWrapper } from './components';
 
@@ -30,6 +31,8 @@ function getSrc(name) {
     case 'Forum':
     case 'Academy':
       return Forum;
+    case 'He4rt':
+      return He4rt;
     default:
       return Gh;
   }

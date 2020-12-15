@@ -81,7 +81,7 @@ const Wave = styled.div`
     position: absolute;
     top: 24px;
     right: 30px;
-    font-size: 50px;
+    font-size: 35px;
   }
 `;
 
